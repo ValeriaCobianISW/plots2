@@ -64,6 +64,15 @@
   <script>
     jQuery(document).ready(function() {
       $E.initialize();
+      $('button[type="submit"]').attr('disabled', true);
+      $('textarea[class="form-control"]').on('keyup', function () {
+          var texto = $(this).val();
+          if (texto != '') {
+            $('button[type="submit"]').attr('disabled', false);
+          } else {
+            $('button[type="submit"]').attr('disabled', true);
+          }
+      });
     });
 
     $D = {
